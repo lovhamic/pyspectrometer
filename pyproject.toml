@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyspectrometer-image-folder"
+version = "3.2.0"
+description = "Desktop spectral analysis tool for post-processing and calibrating diffraction spectrum images."
+readme = "README.md"
+authors = [
+    { name = "Les Wright", email = "les@leswright.co.uk" },
+    { name = "Florian Ragwitz" },
+    { name = "PySpectrometer Contributors" }
+]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+keywords = ["spectrometer", "spectroscopy", "optics", "physics", "wavelength", "diffraction", "spectral-analysis"]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+    "opencv-python>=4.5.0",
+    "pillow>=9.0.0",
+    "peakutils>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "flake8>=6.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+pyspectrometer = "pyspectrometer_image_folder:main"
+
+[project.urls]
+Homepage = "https://github.com/leswright177/PySpectrometer"
+Repository = "https://github.com/leswright177/PySpectrometer"
+"Bug Tracker" = "https://github.com/leswright177/PySpectrometer/issues"
+
+[tool.setuptools.py-modules]
+py-modules = ["pyspectrometer_image_folder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
